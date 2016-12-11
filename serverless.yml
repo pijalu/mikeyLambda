@@ -1,0 +1,21 @@
+service: MikeyDemo
+provider:
+  name: aws
+  runtime: nodejs4.3
+	
+plugins:
+  - serverless-offline
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: hello
+          method: get
+  matches:
+    handler: matchesgame.matches
+    events:
+      - http:
+          path: matches
+          method: get
