@@ -19,3 +19,4 @@ functions:
       - http:
           path: matches
           method: get
+					cors: true

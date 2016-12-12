@@ -22,6 +22,7 @@ module.exports.matches = (event, context, callback) => {
 		//console.log('Calling callback:('+JSON.stringify(err)+', '+JSON.stringify(reply)+')');
 		callback(null, {
 			statusCode: (err != undefined) ? 400 : 200,
+      headers: { 'Access-Control-Allow-Origin' : '*'},
 			body: (err != undefined) ? {'message':err.error}: JSON.stringify(reply)
     });	
   };
